@@ -4,7 +4,7 @@ from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_ki
 from crewai_tools import SerperDevTool
 
 @CrewBase
-class CrewAICustomerSupport:
+class CrewaiCustomerSupport:
     """Crew for handling CrewAI customer support inquiries"""
 
     # Reference the YAML configurations
