@@ -6,10 +6,6 @@ from datetime import datetime
 
 from crewai_customer_support.crew import CrewAICustomerSupport
 
-from dotenv import load_dotenv
-
-load_dotenv("/workspace/storage/marimo_workspace/crewai_customer_support/.env")
-
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
 # This main file is intended to be a way for you to run your

@@ -2,9 +2,6 @@ import os
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
 from crewai_tools import SerperDevTool
-from dotenv import load_dotenv
-
-load_dotenv()
 
 @CrewBase
 class CrewAICustomerSupport:
