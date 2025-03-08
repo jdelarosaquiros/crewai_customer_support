@@ -1,30 +1,42 @@
 extract_questions_research_task:
-  description: >
-    Analyze the provided content titled "{title}" and extract all the questions related to CrewAI. 
-    The content is as follows:
-    
-    "{user_content}"
+  description: > # A clear, concise statement of what the task entails.
+    Subject:
+    {title}
 
+    Content:
+    {user_content}
+
+    Task:
+    Analyze the provided content and title and extract all the questions related to CrewAI based on the email content. 
     Then, conduct research to find the most accurate answers using various online resources.
-  expected_output: >
+  expected_output: > # A detailed description of what the task’s completion looks like.
     A list of extracted questions along with their researched answers.
   agent: crewai_research_agent
 
 answer_formulation_task:
   description: >
-    Use the researched answers from "{title}" to craft well-structured and professional responses.
+    Subject:
+    {title}
+
+    Content:
+    {user_content}
+
+    Task:
+    Use the researched answers to craft well-structured and professional responses to the following inqu:
   expected_output: >
     A detailed and well-formatted set of answers, each corresponding to a question.
   agent: crewai_customer_support_agent
 
 email_response_task:
   description: >
-    Format the answers into a professional email response with the subject "{title}" and the following content:
+    Task:
+    Format the answers into a professional email reply.
 
-    "{user_content}"
-
+    Requirements:
     Ensure clarity, friendliness, and completeness in the final message.
-    Set the sender name to Javier and do not provide contact information.
+    Set the sender's name to CrewAI Team and do not provide contact information.
+    Do not use placeholders.
+    Do not use markdown (e.g. **) or any other similar formating.
   expected_output: >
     A customer support email containing answers to all the extracted questions.
   agent: crewai_customer_support_agent

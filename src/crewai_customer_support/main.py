@@ -15,15 +15,11 @@ def run():
     title = "Customer Inquiry: CrewAI Features"
     user_content = """
     Hi CrewAI Team,
-    
-    I've been exploring CrewAI for a while and have a few questions:
-    
-    1. How does CrewAI handle memory between tasks?
-    2. Can I integrate custom tools with CrewAI?
-    3. What's the best way to debug agent outputs?
-    
-    Thanks!
-    Manuel
+
+    How does CrewAI handle memory?
+
+    Thanks,
+    Javier
     """
     inputs = {"title": title, "user_content": user_content}
     
@@ -84,7 +80,7 @@ def test():
     Thanks!
     Manuel
     """
-    inputs = {"title": title, "user_content": user_content}
+    inputs = {"title": title, "user_content": user_content.replace("**", "")}
     try:
         CrewaiCustomerSupport().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
